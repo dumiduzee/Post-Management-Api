@@ -63,3 +63,13 @@ export const delete_user = async (req, res) => {
     res.status(400).json({ status: false, message: error.message });
   }
 };
+
+//Get all posts
+export const get_all_post = async (req, res) => {
+  try {
+    const all_posts = await Post_Model.find();
+    res.status(200).json({ status: true, message: all_posts });
+  } catch (error) {
+    res.status(400).json({ status: false, message: error.message });
+  }
+};

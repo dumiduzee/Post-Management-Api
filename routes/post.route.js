@@ -3,6 +3,7 @@ import Router from "express";
 import {
   create_post,
   delete_user,
+  get_all_post,
   update_post,
 } from "../controllers/post.controller.js";
 import {
@@ -38,5 +39,7 @@ post_router.delete(
   delete_and_update_validation,
   delete_user
 );
+
+post_router.get("/all", get_all_post);
 
 export default post_router;
